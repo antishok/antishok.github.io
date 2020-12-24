@@ -1,0 +1,59 @@
+html, body {
+	height: 100%;
+	overflow:visible;
+	-webkit-filter: initial !important; /* for bypassing deluminate extension */
+}
+
+body {
+	background: black;
+	color: #ddd !important;
+	direction: rtl;
+	font-family: sans-serif;
+	font-size: 18px;
+}
+
+tickeritems {
+	display: block;
+	width: 800px;
+	margin: 0 auto;
+}
+
+item { 
+   display: block;
+   margin-bottom: 3px;
+}
+
+
+a {
+	margin: 0 10px;
+	text-decoration: none;
+	color: #8a2 !important;
+}
+
+a:visited {
+	color: #692 !important;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+text {
+	display: block;
+	font-size: 16px;
+	color: #47c !important;
+	margin: 5px;
+}
+
+date { 
+	float:right;
+}
+
+.new {
+	font-weight: bold;
+	color: rgb(144, 202, 91) !important;
+}
+
+html[hc^="delumine"] {
+
+}
