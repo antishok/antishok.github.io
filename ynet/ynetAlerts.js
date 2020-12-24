@@ -7,7 +7,7 @@ fetchAlerts();
 const title = 'ynet alerts';
 
 function fetchAlerts() {
-  $.get(location.href.slice(0,-2)).then(processAlerts);
+  $.get('https://www.ynet.co.il/iphone/json/api/auto_ticker/VO6JGRUVA').then(processAlerts);
 }
 
 function processAlerts(data) {
