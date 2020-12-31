@@ -20,7 +20,7 @@ function processAlerts(data) {
     const timestamp = Date.parse(item.launchDate);
     const fulltext = item.plainText;
     const d = new Date(timestamp);
-    const date = `${d.getDate()}/${d.getMonth()}/${1900+d.getYear()} ${String(d.getHours()).padStart(2,0)}:${String(d.getMinutes()).padStart(2,0)}`;
+    const date = `${d.getDate()}/${d.getMonth()+1}/${1900+d.getYear()} ${String(d.getHours()).padStart(2,0)}:${String(d.getMinutes()).padStart(2,0)}`;
     const url = item.publishedLink;
 
     return {
