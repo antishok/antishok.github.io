@@ -2,12 +2,13 @@ var maxItems = 100;
 var refreshTime = 60000;
 var timer;
 
+const title = 'ynet alerts';
+const alertsUrl = 'https://corsproxy.io/?' + encodeURIComponent('https://www.ynet.co.il/iphone/json/api/auto_ticker/VO6JGRUVA');
+
 fetchAlerts();
 
-const title = 'ynet alerts';
-
 function fetchAlerts() {
-  $.get('https://www.ynet.co.il/iphone/json/api/auto_ticker/VO6JGRUVA').then(processAlerts);
+  $.get(alertsUrl).then(processAlerts);
 }
 
 function processAlerts(data) {
