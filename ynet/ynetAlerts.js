@@ -3,7 +3,7 @@ var refreshTime = 60000;
 var timer;
 
 const title = 'ynet alerts';
-const alertsUrl = 'https://corsproxy.io/?' + encodeURIComponent('https://www.ynet.co.il/iphone/json/api/auto_ticker/BJxBgE80q2');
+const alertsUrl = 'https://corsproxy.io/?' + encodeURIComponent(`https://www.ynet.co.il/iphone/json/api/auto_ticker/BJxBgE80q2?cb=${Math.random()}`);
 
 fetchAlerts();
 
