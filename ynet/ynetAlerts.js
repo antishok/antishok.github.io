@@ -12,7 +12,7 @@ function fetchAlerts() {
 }
 
 function processAlerts(data) {
-  data = data.tickerAutoDesktop.data;
+  data = data.data.tickerAutoDesktop.data;
   document.title = title;
 
   //console.log('data:', data);
