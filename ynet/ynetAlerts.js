@@ -3,7 +3,7 @@ var refreshTime = 60000;
 var timer;
 
 const title = 'ynet alerts';
-const alertsUrl = 'https://corsproxy.io/?' + encodeURIComponent('https://www.ynet.co.il/iphone/json/api/auto_ticker/VO6JGRUVA');
+const alertsUrl = 'https://corsproxy.io/?' + encodeURIComponent('https://www.ynet.co.il/iphone/json/api/auto_ticker/BJxBgE80q2');
 
 fetchAlerts();
 
@@ -12,11 +12,12 @@ function fetchAlerts() {
 }
 
 function processAlerts(data) {
+  data = data.tickerAutoDesktop.data;
   document.title = title;
 
   //console.log('data:', data);
 
-  const curItems = data.data.map(item => {
+  const curItems = data.map(item => {
     const message = item.title;
     const timestamp = Date.parse(item.launchDate);
     const fulltext = item.plainText;
