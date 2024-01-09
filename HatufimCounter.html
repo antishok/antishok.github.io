@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostages Counter</title>
+    <script>
+        (function () {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "https://bringthemhomenow.net/1.0.8/hostages-ticker.js";
+            script.setAttribute(
+                "integrity",
+                "sha384-jQVW0E+wZK5Rv1fyN+b89m7cYY8txH4s3uShzHf1T51hdBTPo7yKL6Yizgr+Gp8C"
+            );
+            script.setAttribute("crossorigin", "anonymous");
+                // This code runs after the external script has loaded
+                // Here you can chose the position of the Counter
+                // Left, right, bottom, top. open the element by chosing the right place by removing the slashes
+            script.onload = function () {
+            	var bthnElement = document.getElementById('bthn');
+    		bthnElement.style.position = 'fixed';
+   		bthnElement.style.top = '30px';
+  	  	bthnElement.style.right = '30px';
+  	  	//bthnElement.style.bottom = '10px';
+    		//bthnElement.style.left = '';
+		bthnElement.style.width = 'fit-content';
+                bthnElement.style.height = 'fit-content';
+		//DISABLE X ON THE BANNER
+    		document.getElementById('closeBthn').innerText = "";
+};
+            document.getElementsByTagName("head")[0].appendChild(script);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Your content goes here -->
+    <div id="bthn" lang="he"></div>
+</body>
+</html>
