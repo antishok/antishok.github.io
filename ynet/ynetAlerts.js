@@ -7,7 +7,8 @@ const title = 'ynet alerts';
 fetchAlerts();
 
 function fetchAlerts() {
-  const alertsUrl = 'https://corsproxy.io/?' + encodeURIComponent(`https://www.ynet.co.il/iphone/json/api/auto_ticker/BJxBgE80q2?cb=${Math.random()}`);
+  //const alertsUrl = 'https://corsproxy.io/?' + encodeURIComponent(`https://www.ynet.co.il/iphone/json/api/auto_ticker/BJxBgE80q2?cb=${Math.random()}`);
+  const alertsUrl = 'http://oraclevm.antishok.xyz:8892/iphone/json/api/auto_ticker/BJxBgE80q2?cb=0.3611810182108661=';
   $.get(alertsUrl).then(processAlerts);
 }
 
@@ -76,8 +77,8 @@ function processAlerts(data) {
   if (prevItems) {
     // remove duplicates, combine prev & current items, sort
     newItems = curItems.filter(function(item) {
-      return prevItems.filter(function(prevItem) { 
-        var same = (item.timestamp === prevItem.timestamp) && 
+      return prevItems.filter(function(prevItem) {
+        var same = (item.timestamp === prevItem.timestamp) &&
         		     levenshtein_distance(item.message, prevItem.message) < 20;
         if (same)
         	prevItem.message = item.message;
@@ -88,7 +89,7 @@ function processAlerts(data) {
 
     var allItems = newItems.concat(prevItems);
     allItems = allItems.slice().sort(function(a,b) {
-      return (b.timestamp === a.timestamp) 
+      return (b.timestamp === a.timestamp)
         ? allItems.indexOf(a) - allItems.indexOf(b) // make sure sort is stable
         : b.timestamp - a.timestamp
     });
@@ -110,7 +111,7 @@ function processAlerts(data) {
     $date.innerText = item.date;
     $item.appendChild($date);
     var $a = document.createElement('a');
-    
+
     $a.setAttribute('href',item.url);
     $a.setAttribute('data-text',item.fulltext);
     $a.innerText = item.message || '-';
@@ -160,7 +161,7 @@ window.onfocus = function() {
 
 window.onclick = setTimer;
 
-function setTimer() { 
+function setTimer() {
 	if (timer)
 		clearTimeout(timer);
 	//timer = setTimeout(location.reload.bind(location), refreshTime);
