@@ -8,7 +8,7 @@ fetchAlerts();
 
 function fetchAlerts() {
   //const alertsUrl = 'https://corsproxy.io/?' + encodeURIComponent(`https://www.ynet.co.il/iphone/json/api/auto_ticker/BJxBgE80q2?cb=${Math.random()}`);
-  const alertsUrl = 'http://oraclevm.antishok.xyz:8892/iphone/json/api/auto_ticker/BJxBgE80q2?cb=0.3611810182108661=';
+  const alertsUrl = 'https://oraclevm.antishok.xyz/iphone/json/api/auto_ticker/BJxBgE80q2?cb=0.3611810182108661=';
   $.get(alertsUrl).then(processAlerts);
 }
 
